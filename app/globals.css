@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --brandColor: #04d2f0;
+  --primaryBlack: #040717;
+  --primaryBlackforhover: #080b20;
+  --primaryWhite: #ffffff;
+  --primaryWhiteForHover: rgb(226, 226, 226);
+  --borderColor: #3c3c3c;
+}
+
+
+body {
+  background: var(--primaryBlack);
+  color: var(--primaryWhite);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera*/
+  }
+}
+
+@layer components {
+  .bg {
+    background: var(--primaryBlack) !important;
+  }
+
+  .brandColor {
+    color: var(--brandColor) !important;
+  }
+
+  .brandBg {
+    background: var(--brandColor) !important;
+  }
+
+  .color {
+    color: var(--primaryWhite) !important;
+  }
+
+  .btn {
+    background: var(--primaryWhite);
+    color: var(--primaryBlack);
+    padding: 0.4rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: var(--primaryWhiteForHover);
+    color: var(--primaryBlackforhover);
+  }
+
+
+  .myborder {
+    border: 1px solid;
+    border-color: var(--borderColor);
+  }
+
+  .myborderLeft {
+    border-left: 1px solid;
+    border-color: var(--borderColor);
+  }
+
+  .myborderRight {
+    border-right: 1px solid;
+    border-color: var(--borderColor);
+  }
+
+  .myborderBottom {
+    border-bottom: 1px solid;
+    border-color: var(--borderColor);
+  }
+
+  .myborderTop {
+    border-top: 1px solid;
+    border-color: var(--borderColor);
+  }
+
+  .heroBackground {
+    background-image: "radial-gradient(125% 125% at 50% 10%, #000000ff 40%, #ffffffff 100%";
+    background-size: "100% 100%",
+  }
+
+
+  .tooltipArraow::before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    background: var(--primaryWhite);
+    position: absolute;
+    top: 50px;
+    right: -7px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: -1;
+  }
+
+}
